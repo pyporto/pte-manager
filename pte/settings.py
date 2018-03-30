@@ -22,6 +22,27 @@ GCAL_OAUTH_CLIENT_ID = os.environ['GCAL_OAUTH_CLIENT_ID']
 GCAL_OAUTH_CLIENT_SECRET = os.environ['GCAL_OAUTH_CLIENT_SECRET']
 GCAL_OAUTH_REFRESH_TOKEN_FILE = 'gcal_refresh_token.txt'
 
+# Get a new token at
+# https://developers.facebook.com/tools/explorer/
+FACEBOOK_ACCESS_TOKEN = os.environ['FACEBOOK_ACCESS_TOKEN']
+FACEBOOK_PAGES = [
+    'techinporto',
+    'portoio',
+    'makeorbreak.io',
+    'scaleupporto',
+    'tedxporto',
+    'PortoTecHub',
+    'datascienceportugal',
+    'helloworldconf',
+    'GDGPorto',
+    'agileconnect',
+    'DRiP.pt',
+    'XpConference',
+    'madgamejam',
+    'techdaysaveiro',
+    'nei.isep',
+    'commitporto',
+]
 
 MEETUP_COMMUNITIES = [
     'pyporto',
