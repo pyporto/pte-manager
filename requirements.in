@@ -1,0 +1,13 @@
+python-dotenv
+requests
+beautifulsoup4
+icalendar
+click
+ipython
+tqdm
+google-api-python-client
+flask
+dataclasses
+mypy
+requests-html
+python-slugify
