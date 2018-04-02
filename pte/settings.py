@@ -42,11 +42,13 @@ FACEBOOK_PAGES = [
     'techdaysaveiro',
     'nei.isep',
     'commitporto',
+    'AlumniEI',
 ]
 
 MEETUP_COMMUNITIES = [
     'pyporto',
     'Disruptive-Data-Science',
+    'Disruptive-Tech-Tools',
     'devopsporto',
     'portocodes',
     'datascienceportugal',
@@ -64,11 +66,11 @@ MEETUP_COMMUNITIES = [
     'PortoUX',
     'i-o-Sessions',
     '0xOPOSEC',
-    'BrainsMeetup',
     'Agile-Connect-Porto',
     'WP-Porto',
     'GameDevMeetPorto',
     'GDG-Porto',
     'PHPorto',
     'Elastic-Portugal',
+    'CocoaHeads-Porto',
 ]
