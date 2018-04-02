@@ -1,8 +1,5 @@
 import datetime
 from urllib.parse import urljoin
-from itertools import chain
-
-from typing import Iterator
 from requests_html import HTMLSession
 from dateutil.parser import parse
 from slugify import slugify
