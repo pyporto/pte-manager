@@ -1,9 +1,23 @@
-from typing import Callable, Iterator
-
+from typing import Callable, Iterator, List
 from pte import events
 
 
-def scrape(scraper: Callable[[], Iterator[events.GenericEvent]]):
+Scraper = Callable[[], Iterator[events.GenericEvent]]
+
+
+scrapers = []  # type: List[Scraper]
+
+
+def register(scraper: Scraper):
+    scrapers.append(scraper)
+
+
+def run_all():
+    for scraper in scrapers:
+        run_scraper(scraper)
+
+
+def run_scraper(scraper: Scraper):
     """
     Main function to update the list of events from the remote
     source.

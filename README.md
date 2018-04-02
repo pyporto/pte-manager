@@ -3,10 +3,8 @@ How to scrape
 
 
 ```python
-from pte.scrapers import core, eventbrite, meetup, sapo
-core.scrape(eventbrite.scrape)
-core.scrape(meetup.scrape)
-core.scrape(sapo.scrape)
+from pte.scrapers import core
+core.run_all()
 ```
 
 How to update Google Calendar

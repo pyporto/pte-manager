@@ -8,6 +8,7 @@ from dateutil.parser import parse
 from slugify import slugify
 
 from pte.events import MiscEvent
+from pte.scrapers import core
 
 session = HTMLSession()
 
@@ -21,15 +22,6 @@ pt_en_months = {
     'out': 'oct',
     'dez': 'dec',
 }
-
-
-def scrape() -> Iterator[MiscEvent]:
-    yield from chain(
-        PremierLeagueSpider().scrape(),
-        PortugalCupSpider().scrape(),
-        UEFAChampionLeagueSpider().scrape(),
-        UEFAChampionLeagueSpider().scrape(),
-    )
 
 
 class FootballSpider:
@@ -108,3 +100,8 @@ class UEFAEuroLeagueSpider(FootballSpider):
     event_id_prefix = 'liga-europa'
     event_name_prefix = 'Liga Europa'
 
+
+core.register(PremierLeagueSpider().scrape)
+core.register(PortugalCupSpider().scrape)
+core.register(UEFAChampionLeagueSpider().scrape)
+core.register(UEFAChampionLeagueSpider().scrape)

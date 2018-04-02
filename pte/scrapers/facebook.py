@@ -4,6 +4,7 @@ from pte import settings
 from requests import Session
 from pte.events import Event
 from pte.utils import get_date
+from pte.scrapers import core
 
 sess = Session()
 sess.headers['Authorization'] = f'Bearer {settings.FACEBOOK_ACCESS_TOKEN}'
@@ -46,3 +47,6 @@ def get_page_url(page):
     url = (f'https://graph.facebook.com/v2.12/{page}?'
            'fields=events{name,description,start_time,end_time,id,place}')
     return url
+
+
+core.register(scrape)

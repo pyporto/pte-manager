@@ -3,6 +3,7 @@ from pte import settings
 from requests import Session
 from pte.events import Event
 from pte.utils import get_date
+from pte.scrapers import core
 
 meetup = Session()
 meetup.headers['Authorization'] = settings.MEETUP_API_KEY
@@ -35,3 +36,6 @@ def scrape_community(community: str) -> Iterator[Event]:
             rrule=None,
         )
         yield ev
+
+
+core.register(scrape)

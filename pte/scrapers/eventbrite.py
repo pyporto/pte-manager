@@ -2,6 +2,7 @@ import requests
 import datetime
 from typing import Iterator
 from pte import settings
+from pte.scrapers import core
 from pte.events import Event
 
 eventbrite = requests.Session()
@@ -51,3 +52,6 @@ def eventbrite_to_event(ev_dict: dict) -> Event:
                  end_date=end_date,
                  location=location,
                  rrule=None)
+
+
+core.register(scrape)
