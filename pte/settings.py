@@ -74,3 +74,8 @@ MEETUP_COMMUNITIES = [
     'Elastic-Portugal',
     'CocoaHeads-Porto',
 ]
+
+
+ICAL_FEEDS = [
+    ('scaleupporto', 'http://scaleupporto.pt/events/?ical=1'),
+]

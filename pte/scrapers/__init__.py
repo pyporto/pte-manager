@@ -1,1 +1,1 @@
-from . import core, eventbrite, facebook, meetup, sapo, timeanddate
+from . import core, eventbrite, facebook, ical, meetup, sapo, timeanddate
