@@ -43,6 +43,7 @@ FACEBOOK_PAGES = [
     'nei.isep',
     'commitporto',
     'AlumniEI',
+    'Porto-on-Rails',
 ]
 
 MEETUP_COMMUNITIES = [
