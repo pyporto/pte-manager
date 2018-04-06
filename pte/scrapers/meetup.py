@@ -32,7 +32,7 @@ def scrape_community(community: str) -> Iterator[Event]:
             description=descrption.splitlines(True),
             start_date=ev_date,
             end_date=ev_date,
-            location=ev_dict['venue']['name'],
+            location=ev_dict.get('venue', {}).get('name'),
             rrule=None,
         )
         yield ev
