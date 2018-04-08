@@ -75,6 +75,8 @@ MEETUP_COMMUNITIES = [
     'CocoaHeads-Porto',
     'Porto-on-Rails',
     'Papers-We-Love-Porto',
+    'iosporto',
+    'Disruptive-Go',
 ]
 
 
