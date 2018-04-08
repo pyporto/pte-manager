@@ -17,6 +17,7 @@ MEETUP_API_KEY = os.environ['MEETUP_API_KEY']
 EVENTBRITE_API_TOKEN = os.environ['EVENTBRITE_API_TOKEN']
 
 GCAL_ID = 'nldp40d05lh6muiv7mqh4crmno@group.calendar.google.com'
+MISC_GCAL_ID = 'r82gmulo04i3466213gpau424k@group.calendar.google.com'
 GCAL_OAUTH_REDIRECT_URI = 'http://127.0.0.1:5000/redirect'
 GCAL_OAUTH_CLIENT_ID = os.environ['GCAL_OAUTH_CLIENT_ID']
 GCAL_OAUTH_CLIENT_SECRET = os.environ['GCAL_OAUTH_CLIENT_SECRET']
