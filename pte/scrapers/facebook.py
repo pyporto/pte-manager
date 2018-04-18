@@ -20,7 +20,11 @@ def scrape_page_events(page: str) -> Iterator[Event]:
 
     resp = sess.get(get_page_url(page))
     resp.raise_for_status()
-    events = resp.json()['events']['data']
+    json_resp = resp.json()
+    if 'events' not in json_resp:
+        return
+
+    events = json_resp['events']['data']
     for ev_dict in events:
         start_date = get_date(ev_dict['start_time'][:10])
         if 'end_time' in ev_dict:
