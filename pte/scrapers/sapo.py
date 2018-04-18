@@ -53,8 +53,13 @@ class FootballSpider:
                 pt_date = pt_date.replace(k, v)
             event_start = parse(pt_date)
             event_end = event_start + datetime.timedelta(minutes=120)
-            team1 = li.find('.team-name-short')[0].text
-            team2 = li.find('.team-name-short')[1].text
+
+            team_names_el = li.find('.team-name-short')
+            if not team_names_el:
+                team_names_el = li.find('.team-name')
+
+            team1 = team_names_el[0].text
+            team2 = team_names_el[1].text
             event_name = f'{self.event_name_prefix}. {team1} x {team2}'
             event_id = slugify(f'{self.event_id_prefix}-{event_start:%Y%m%d}-'
                                f'{team1}-{team2}')
