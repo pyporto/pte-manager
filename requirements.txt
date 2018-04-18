@@ -48,6 +48,7 @@ pytz==2018.3              # via icalendar
 requests-html==0.9.0
 requests==2.18.4
 rsa==3.4.2                # via oauth2client
+sh==1.12.14
 simplegeneric==0.8.1      # via ipython
 six==1.11.0               # via google-api-python-client, oauth2client, prompt-toolkit, python-dateutil, traitlets, w3lib
 tqdm==4.19.9

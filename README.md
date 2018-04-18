@@ -2,15 +2,28 @@ How to scrape
 -------------
 
 
-```python
-from pte.scrapers import core
-core.run_all()
+```sh
+./manage.py scrape
 ```
 
 How to update Google Calendar
 -----------------------------
 
-```python
-from pte.gcal.sync import sync
-sync()
+```sh
+./manage.py sync_gcal
+```
+
+
+The overall workflow
+--------------------
+
+Update the Facebook key in .env against
+https://developers.facebook.com/tools/explorer/ and then run
+
+
+```
+./manage.py scrape
+./manage.py status
+./manage.py sync_github
+./manage.py sync_gcal
 ```

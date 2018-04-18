@@ -11,3 +11,4 @@ dataclasses
 mypy
 requests-html
 python-slugify
+sh
