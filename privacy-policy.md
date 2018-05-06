@@ -1,0 +1,1 @@
+The code is intended to collect publicly available information of events happening around Porto. No personal information is collected. Stored records are publicly available at https://github.com/pyporto/porto-tech-events/
