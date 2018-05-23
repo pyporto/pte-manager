@@ -44,10 +44,11 @@ def eventbrite_to_event(ev_dict: dict) -> Event:
     if not location:
         location = venue_resp.json()['address']['localized_address_display']
 
+    description = ev_dict['description'].get('text') or ''
     return Event(id=id,
                  url=ev_dict['url'],
                  name=ev_dict['name']['text'],
-                 description=ev_dict['description']['text'].splitlines(True),
+                 description=description.splitlines(True),
                  start_date=start_date,
                  end_date=end_date,
                  location=location,

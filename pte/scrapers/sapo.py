@@ -103,7 +103,14 @@ class UEFAEuroLeagueSpider(FootballSpider):
     event_name_prefix = 'Liga Europa'
 
 
+class WorldCupSpider(FootballSpider):
+    start_page = 'https://desporto.sapo.pt/futebol/competicao/world-cup-1/calendario'
+    event_id_prefix = 'world-cup'
+    event_name_prefix = 'World Cup'
+
+
 core.register(PremierLeagueSpider().scrape)
 core.register(PortugalCupSpider().scrape)
 core.register(UEFAChampionLeagueSpider().scrape)
-core.register(UEFAChampionLeagueSpider().scrape)
+core.register(UEFAEuroLeagueSpider().scrape)
+core.register(WorldCupSpider().scrape)

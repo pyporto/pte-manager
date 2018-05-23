@@ -44,7 +44,6 @@ FACEBOOK_PAGES = [
     'nei.isep',
     'commitporto',
     'AlumniEI',
-    'Chain-in-Blockchain-Cryptocurrency-Conference',
 ]
 
 MEETUP_COMMUNITIES = [
@@ -79,6 +78,7 @@ MEETUP_COMMUNITIES = [
     'Papers-We-Love-Porto',
     'iosporto',
     'Disruptive-Go',
+    'Chain-in-Blockchain-Cryptocurrency-Conference',
 ]
 
 
