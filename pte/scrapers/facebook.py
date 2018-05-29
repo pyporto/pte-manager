@@ -11,6 +11,12 @@ sess.headers['Authorization'] = f'Bearer {settings.FACEBOOK_ACCESS_TOKEN}'
 
 
 def scrape() -> Iterator[Event]:
+    # XXX: temporarily disabled
+    # > This edge is only available to a limited number of approved apps.
+    # > Unapproved apps querying this edge will receive an empty data set in
+    # > response. You cannot request access to this edge at this time.
+    # https://developers.facebook.com/docs/graph-api/reference/page/events/
+    return
     for page in settings.FACEBOOK_PAGES:
         yield from scrape_page_events(page)
 
