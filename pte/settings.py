@@ -79,6 +79,7 @@ MEETUP_COMMUNITIES = [
     'iosporto',
     'Disruptive-Go',
     'Chain-in-Blockchain-Cryptocurrency-Conference',
+    'Porto-Data',
 ]
 
 
