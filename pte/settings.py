@@ -72,6 +72,7 @@ MEETUP_COMMUNITIES = [
     'Porto-on-Rails',
     'PortoStartupCoffee',
     'PortoUX',
+    'ProductTank-Porto',
     'React-Native-Portugal',
     'WP-Porto',
     'datascienceportugal',
