@@ -91,6 +91,12 @@ class PortugalCupSpider(FootballSpider):
     event_id_prefix = 'taca-de-portugal'
 
 
+class PortugueseLeagueSpider(FootballSpider):
+    start_page = 'https://desporto.sapo.pt/futebol/competicao/taca-da-liga-5/calendario'
+    event_name_prefix = 'Portuguese League Cup'
+    event_id_prefix = 'taca-da-liga'
+
+
 class UEFAChampionLeagueSpider(FootballSpider):
     start_page = 'https://desporto.sapo.pt/futebol/competicao/uefa-champions-league-6/calendario'
     event_id_prefix = 'uefa-champions-league'
@@ -103,6 +109,12 @@ class UEFAEuroLeagueSpider(FootballSpider):
     event_name_prefix = 'Liga Europa'
 
 
+class UEFANationsLeagueSpider(FootballSpider):
+    start_page = 'https://desporto.sapo.pt/futebol/competicao/uefa-nations-league-112/calendario'
+    event_id_prefix = 'uefa-nations-league'
+    event_name_prefix = 'UEFA Nations League'
+
+
 class WorldCupSpider(FootballSpider):
     start_page = 'https://desporto.sapo.pt/futebol/competicao/world-cup-1/calendario'
     event_id_prefix = 'world-cup'
@@ -111,6 +123,8 @@ class WorldCupSpider(FootballSpider):
 
 core.register(PremierLeagueSpider().scrape)
 core.register(PortugalCupSpider().scrape)
+core.register(PortugueseLeagueSpider().scrape)
 core.register(UEFAChampionLeagueSpider().scrape)
 core.register(UEFAEuroLeagueSpider().scrape)
-core.register(WorldCupSpider().scrape)
+core.register(UEFANationsLeagueSpider().scrape)
+#core.register(WorldCupSpider().scrape)
