@@ -10,7 +10,11 @@ session = HTMLSession()
 
 
 def scrape() -> Iterator[MiscEvent]:
-    resp = session.get('https://www.timeanddate.com/holidays/portugal/')
+    resp = session.get(
+        'https://www.timeanddate.com/holidays/portugal/',
+        headers={
+            'Accept-Language': 'en-US',
+        })
     resp.raise_for_status()
     i = 0
     while True:
