@@ -13,7 +13,7 @@ def register(name: str, scraper: Scraper):
 
 
 def run_all():
-    for scraper in scrapers.values():
+    for scraper in scrapers.keys():
         run_scraper(scraper)
 
 
