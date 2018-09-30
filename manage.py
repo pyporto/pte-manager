@@ -3,11 +3,14 @@ import click
 from pte.scrapers.core import run_scraper, scrapers, run_all
 from pte import model_storage
 from pte.gcal.sync import sync as gcal_sync
+from pte.utils import configure_logging
 
 
+@click.option('-v', '--verbose', is_flag=True, default=False)
 @click.group()
-def cli():
-    pass
+def cli(verbose):
+    log_level = 'DEBUG' if verbose else 'INFO'
+    configure_logging(log_level)
 
 
 @cli.command()
@@ -54,6 +57,12 @@ def sync_gcal():
     Update Google Calendars from local JSON files
     """
     gcal_sync()
+
+
+@cli.command()
+def shell():
+    from IPython import embed
+    embed()
 
 
 if __name__ == '__main__':

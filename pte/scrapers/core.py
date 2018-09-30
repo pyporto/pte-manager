@@ -1,7 +1,9 @@
+import logging
 from typing import Callable, Iterator, Dict
 from pte import events
 
 
+logger = logging.getLogger(__name__)
 Scraper = Callable[[], Iterator[events.GenericEvent]]
 
 
@@ -27,6 +29,7 @@ def run_scraper(name: str):
     scraper and tries to create or update a description of the event in
     MODEL_STORAGE_ROOT
     """
+    logger.info('Run scraper %s', name)
     scraper = scrapers[name]
     for ev in scraper():
         orig_ev = ev.__class__.get_by_id(ev.id)
