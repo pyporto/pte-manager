@@ -1,5 +1,6 @@
 import hashlib
 import datetime
+import logging
 
 from requests import Session
 from pte import settings, events
@@ -8,7 +9,7 @@ from pte.gcal.access import get_access_token
 
 BASE_URL = 'https://www.googleapis.com/calendar/v3/calendars'
 
-
+logger = logging.getLogger(__name__)
 sess = Session()
 sess.headers['Authorization'] = f'Bearer {get_access_token()}'
 
@@ -20,6 +21,7 @@ class GenericGCalSynchronizer:
     event_color = None
 
     def clear(self):
+        logger.info('Clear Google Calendar')
         events_url = f'{BASE_URL}/{self.gcal_id}/events'
         total_events = 0
         while True:
@@ -40,7 +42,9 @@ class GenericGCalSynchronizer:
         remote_events = self.get_remote_events()
 
         # sync events, existing locally
+        logger.info('Sync locally existing events')
         for event_id, event in local_events.items():
+            logger.debug('Sync event %s', event_id)
             gcal_event = self.event_to_gcal(event)
             if event_id in remote_events.keys():
                 resp = sess.put(url + '/' + event_id, json=gcal_event)
@@ -49,7 +53,9 @@ class GenericGCalSynchronizer:
             resp.raise_for_status()
 
         # remove events which don't exist locally anymore
+        logger.info('Remove locally non-existent events')
         for event_id in remote_events.keys():
+            logger.debug('Delete remote event %s', event_id)
             if event_id not in local_events.keys():
                 resp = sess.delete(url + '/' + event_id)
                 resp.raise_for_status()
