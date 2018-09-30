@@ -38,4 +38,4 @@ def scrape_community(community: str) -> Iterator[Event]:
         yield ev
 
 
-core.register(scrape)
+core.register('meetup', scrape)

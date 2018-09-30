@@ -35,4 +35,4 @@ def scrape() -> Iterator[MiscEvent]:
         i += 1
 
 
-core.register(scrape)
+core.register('timedate', scrape)

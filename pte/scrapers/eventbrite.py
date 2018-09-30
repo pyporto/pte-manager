@@ -55,4 +55,4 @@ def eventbrite_to_event(ev_dict: dict) -> Event:
                  rrule=None)
 
 
-core.register(scrape)
+core.register('eventbrite', scrape)

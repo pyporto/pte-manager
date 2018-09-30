@@ -59,4 +59,4 @@ def get_page_url(page):
     return url
 
 
-core.register(scrape)
+core.register('facebook', scrape)

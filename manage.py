@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import click
-from pte.scrapers.core import run_all
+from pte.scrapers.core import run_scraper, scrapers, run_all
 from pte import model_storage
 from pte.gcal.sync import sync as gcal_sync
 
@@ -11,11 +11,24 @@ def cli():
 
 
 @cli.command()
-def scrape():
+def list_scrapers():
     """
     Scrape the content of remote sources and store them locally as JSON files
     """
-    run_all()
+    for name in sorted(scrapers.keys()):
+        click.echo(name)
+
+
+@click.argument('scraper_names', nargs=-1)
+@cli.command()
+def scrape(scraper_names):
+    """
+    Scrape the content of remote sources and store them locally as JSON files
+    """
+    if not scraper_names:
+        return run_all()
+    for name in scraper_names:
+        run_scraper(name)
 
 
 @cli.command()

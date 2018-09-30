@@ -121,10 +121,10 @@ class WorldCupSpider(FootballSpider):
     event_name_prefix = 'World Cup'
 
 
-core.register(PremierLeagueSpider().scrape)
-core.register(PortugalCupSpider().scrape)
-core.register(PortugueseLeagueSpider().scrape)
-core.register(UEFAChampionLeagueSpider().scrape)
-core.register(UEFAEuroLeagueSpider().scrape)
-core.register(UEFANationsLeagueSpider().scrape)
-#core.register(WorldCupSpider().scrape)
+core.register('premier_league', PremierLeagueSpider().scrape)
+core.register('portugal_cup', PortugalCupSpider().scrape)
+core.register('portguese_league', PortugueseLeagueSpider().scrape)
+core.register('uefa_champion_league', UEFAChampionLeagueSpider().scrape)
+core.register('uefa_euro_league', UEFAEuroLeagueSpider().scrape)
+core.register('uefa_nations_league', UEFANationsLeagueSpider().scrape)
+#core.register('world_cup', WorldCupSpider().scrape)

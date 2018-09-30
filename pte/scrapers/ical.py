@@ -35,4 +35,4 @@ def scrape_feed(feed_name, feed_url) -> Iterator[Event]:
             )
 
 
-core.register(scrape)
+core.register('ical', scrape)
