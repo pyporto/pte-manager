@@ -13,3 +13,5 @@ mypy
 requests-html
 python-slugify
 sh
+asgiref
+pyppeteer
