@@ -97,6 +97,9 @@ class EventsCatcher(object):
         else:
             end_date = start_date
 
+        event_place = ev_dict.get('event_place') or {}
+        location = event_place.get('name') or event_place.get('contextual_name')
+
         ev = Event(
             id=f'fb-{self.page_name}-{ev_dict["id"]}',
             url=f'https://www.facebook.com/events/{ev_dict["id"]}/',
@@ -104,8 +107,7 @@ class EventsCatcher(object):
             description=ev_dict.get('description', '').splitlines(True),
             start_date=start_date,
             end_date=end_date,
-            location=ev_dict.get('event_place', {}).get(
-                'contextual_name', None),
+            location=location,
             rrule=None,
         )
         return ev
