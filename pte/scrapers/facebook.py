@@ -29,14 +29,12 @@ async def scrape() -> Iterator[Event]:
         promises.append(catcher.get_events())
 
     try:
-        done, _ = await asyncio.wait(promises)
+        done = await asyncio.gather(*promises, return_exceptions=True)
     finally:
         await browser.close()
 
-    ret = []
-    for task in done:
-        ret += task.result()
-    return ret
+    ret = [ev_list for ev_list in done if not isinstance(ev_list, Exception)]
+    return sum(ret, [])
 
 
 class EventsCatcher(object):
@@ -55,10 +53,12 @@ class EventsCatcher(object):
     async def get_events(self):
         async with self.semaphore:
             page = await self.browser.newPage()
-            page.on('response', self.on_response)
-            await page.goto(self.get_page_url())
-            ret = await self.parse_responses()
-            await page.close()
+            try:
+                page.on('response', self.on_response)
+                await page.goto(self.get_page_url())
+                ret = await self.parse_responses()
+            finally:
+                await page.close()
             return ret
 
     def get_page_url(self):
@@ -71,7 +71,12 @@ class EventsCatcher(object):
     async def parse_responses(self):
         ret = []
         for resp_promise in self.resp_promises:
-            resp = await resp_promise
+            try:
+                resp = await resp_promise
+            except Exception as e:
+                logger.warning('Fail to wait for one JSON response (%s). '
+                               'Skip it', e)
+                continue
 
             try:
                 events = resp['data']['page']['upcoming_events']
