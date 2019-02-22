@@ -70,6 +70,7 @@ MEETUP_COMMUNITIES = [
     'Porto-Data',
     'Porto-i-o-events',
     'Porto-on-Rails',
+    'Porto-Salesforce-Saturday',
     'PortoStartupCoffee',
     'PortoUX',
     'ProductTank-Porto',
