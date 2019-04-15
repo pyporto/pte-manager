@@ -10,7 +10,7 @@ How to update Google Calendar
 -----------------------------
 
 ```sh
-./manage.py sync_gcal
+./manage.py sync-gcal
 ```
 
 

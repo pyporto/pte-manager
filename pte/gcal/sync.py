@@ -1,11 +1,12 @@
-import hashlib
 import datetime
+import hashlib
 import logging
+import time
 
 from requests import Session
-from pte import settings, events
-from pte.gcal.access import get_access_token
 
+from pte import events, settings
+from pte.gcal.access import get_access_token
 
 BASE_URL = 'https://www.googleapis.com/calendar/v3/calendars'
 
@@ -50,7 +51,8 @@ class GenericGCalSynchronizer:
                 resp = sess.put(url + '/' + event_id, json=gcal_event)
             else:
                 resp = sess.post(url, json=gcal_event)
-            resp.raise_for_status()
+            process_http_response(resp)
+            time.sleep(0.2)
 
         # remove events which don't exist locally anymore
         logger.info('Remove locally non-existent events')
@@ -58,7 +60,8 @@ class GenericGCalSynchronizer:
             logger.debug('Delete remote event %s', event_id)
             if event_id not in local_events.keys():
                 resp = sess.delete(url + '/' + event_id)
-                resp.raise_for_status()
+                process_http_response(resp)
+                time.sleep(0.2)
 
     def get_local_events(self):
         ret = {}
@@ -119,3 +122,17 @@ class MiscGCalSynchronizer(GenericGCalSynchronizer):
 def sync():
     GCalSynchronizer().sync()
     MiscGCalSynchronizer().sync()
+
+
+def process_http_response(resp):
+    """
+    Helper function which returns a bit more information on
+    GCal sync failure
+    """
+    if resp.status_code != 200:
+        json_err = resp.json()
+        err_reason = json_err['error']['errors'][0]['reason']
+        err_text = json_err['error']['message']
+        logger.error(f'GCal returns non-ok status code: '
+                     f'{err_text} ({err_reason})')
+    resp.raise_for_status()
