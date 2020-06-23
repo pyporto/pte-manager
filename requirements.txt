@@ -5,36 +5,35 @@
 #    pip-compile --output-file requirements.txt requirements.in
 #
 appdirs==1.4.3            # via pyppeteer
-appnope==0.1.0            # via ipython
-asgiref==3.2.1
+asgiref==3.2.1            # via -r requirements.in
 backcall==0.1.0           # via ipython
-beautifulsoup4==4.8.0
+beautifulsoup4==4.8.0     # via -r requirements.in, bs4
 bs4==0.0.1                # via requests-html
 cachetools==3.1.1         # via google-auth
 certifi==2019.6.16        # via requests
 chardet==3.0.4            # via requests
-click==7.0
-colorlog==4.0.2
+click==7.0                # via -r requirements.in, flask
+colorlog==4.0.2           # via -r requirements.in
 cssselect==1.1.0          # via pyquery
-dataclasses==0.6
+dataclasses==0.6          # via -r requirements.in
 decorator==4.4.0          # via ipython, traitlets
 fake-useragent==0.1.11    # via requests-html
-flask==1.1.1
-google-api-python-client==1.7.11
+flask==1.1.1              # via -r requirements.in
+google-api-python-client==1.7.11  # via -r requirements.in
 google-auth-httplib2==0.0.3  # via google-api-python-client
 google-auth==1.6.3        # via google-api-python-client, google-auth-httplib2
-httplib2==0.13.1          # via google-api-python-client, google-auth-httplib2
-icalendar==4.0.3
+httplib2==0.18.0          # via google-api-python-client, google-auth-httplib2
+icalendar==4.0.3          # via -r requirements.in
 idna==2.8                 # via requests
 ipython-genutils==0.2.0   # via traitlets
-ipython==7.7.0
+ipython==7.7.0            # via -r requirements.in
 itsdangerous==1.1.0       # via flask
 jedi==0.15.1              # via ipython
 jinja2==2.10.1            # via flask
 lxml==4.4.1               # via pyquery
 markupsafe==1.1.1         # via jinja2
 mypy-extensions==0.4.1    # via mypy
-mypy==0.720
+mypy==0.720               # via -r requirements.in
 parse==1.12.0             # via requests-html
 parso==0.5.1              # via jedi
 pexpect==4.7.0            # via ipython
@@ -45,20 +44,20 @@ pyasn1-modules==0.2.6     # via google-auth
 pyasn1==0.4.6             # via pyasn1-modules, rsa
 pyee==6.0.0               # via pyppeteer
 pygments==2.4.2           # via ipython
-pyppeteer==0.0.25
+pyppeteer==0.0.25         # via -r requirements.in, requests-html
 pyquery==1.4.0            # via requests-html
 python-dateutil==2.8.0    # via icalendar
-python-dotenv==0.10.3
-python-slugify==3.0.3
+python-dotenv==0.10.3     # via -r requirements.in
+python-slugify==3.0.3     # via -r requirements.in
 pytz==2019.2              # via icalendar
-requests-html==0.10.0
-requests==2.22.0
+requests-html==0.10.0     # via -r requirements.in
+requests==2.22.0          # via -r requirements.in, requests-html
 rsa==4.0                  # via google-auth
-sh==1.12.14
+sh==1.12.14               # via -r requirements.in
 six==1.12.0               # via google-api-python-client, google-auth, prompt-toolkit, python-dateutil, traitlets, w3lib
 soupsieve==1.9.2          # via beautifulsoup4
 text-unidecode==1.2       # via python-slugify
-tqdm==4.33.0
+tqdm==4.33.0              # via -r requirements.in, pyppeteer
 traitlets==4.3.2          # via ipython
 typed-ast==1.4.0          # via mypy
 typing-extensions==3.7.4  # via mypy
