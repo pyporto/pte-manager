@@ -30,7 +30,7 @@ ipython==7.7.0            # via -r requirements.in
 itsdangerous==1.1.0       # via flask
 jedi==0.15.1              # via ipython
 jinja2==2.10.1            # via flask
-lxml==4.4.1               # via pyquery
+lxml==4.6.2               # via pyquery
 markupsafe==1.1.1         # via jinja2
 mypy-extensions==0.4.1    # via mypy
 mypy==0.720               # via -r requirements.in
