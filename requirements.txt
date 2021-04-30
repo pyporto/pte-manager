@@ -118,7 +118,7 @@ requests==2.22.0
     # via
     #   -r requirements.in
     #   requests-html
-rsa==4.1
+rsa==4.7
     # via google-auth
 sh==1.12.14
     # via -r requirements.in
