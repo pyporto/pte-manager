@@ -146,7 +146,7 @@ typing-extensions==3.7.4
     # via mypy
 uritemplate==3.0.0
     # via google-api-python-client
-urllib3==1.25.3
+urllib3==1.25.8
     # via
     #   pyppeteer
     #   requests
