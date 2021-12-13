@@ -42,12 +42,12 @@ flask==1.1.1
     # via -r requirements.in
 google-api-python-client==1.7.11
     # via -r requirements.in
-google-auth-httplib2==0.0.3
-    # via google-api-python-client
 google-auth==1.6.3
     # via
     #   google-api-python-client
     #   google-auth-httplib2
+google-auth-httplib2==0.0.3
+    # via google-api-python-client
 httplib2==0.19.0
     # via
     #   google-api-python-client
@@ -56,24 +56,24 @@ icalendar==4.0.3
     # via -r requirements.in
 idna==2.8
     # via requests
-ipython-genutils==0.2.0
-    # via traitlets
 ipython==7.7.0
     # via -r requirements.in
+ipython-genutils==0.2.0
+    # via traitlets
 itsdangerous==1.1.0
     # via flask
 jedi==0.15.1
     # via ipython
 jinja2==2.11.3
     # via flask
-lxml==4.6.3
+lxml==4.6.5
     # via pyquery
 markupsafe==1.1.1
     # via jinja2
-mypy-extensions==0.4.1
-    # via mypy
 mypy==0.720
     # via -r requirements.in
+mypy-extensions==0.4.1
+    # via mypy
 parse==1.12.0
     # via requests-html
 parso==0.5.1
@@ -86,12 +86,12 @@ prompt-toolkit==2.0.9
     # via ipython
 ptyprocess==0.6.0
     # via pexpect
-pyasn1-modules==0.2.6
-    # via google-auth
 pyasn1==0.4.6
     # via
     #   pyasn1-modules
     #   rsa
+pyasn1-modules==0.2.6
+    # via google-auth
 pyee==6.0.0
     # via pyppeteer
 pygments==2.7.4
@@ -112,12 +112,12 @@ python-slugify==3.0.3
     # via -r requirements.in
 pytz==2019.2
     # via icalendar
-requests-html==0.10.0
-    # via -r requirements.in
 requests==2.22.0
     # via
     #   -r requirements.in
     #   requests-html
+requests-html==0.10.0
+    # via -r requirements.in
 rsa==4.7
     # via google-auth
 sh==1.12.14
