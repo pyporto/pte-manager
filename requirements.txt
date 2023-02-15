@@ -68,8 +68,10 @@ jinja2==2.11.3
     # via flask
 lxml==4.6.5
     # via pyquery
-markupsafe==1.1.1
-    # via jinja2
+markupsafe==2.1.2
+    # via
+    #   jinja2
+    #   werkzeug
 mypy==0.720
     # via -r requirements.in
 mypy-extensions==0.4.1
@@ -156,5 +158,5 @@ wcwidth==0.1.7
     # via prompt-toolkit
 websockets==9.1
     # via pyppeteer
-werkzeug==0.15.5
+werkzeug==2.2.3
     # via flask
